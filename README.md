@@ -1,16 +1,16 @@
-# Understanding with genetic algorithms
+# Introduction to genetic algorithms
 
 ## What is it?
 
-It's a group of algorithms aimed at optimization inspired by (a very simple version of) the evolution theory. Most of those algorithms a heuristic or stochastic trial-and-error techniques.
+It's a group of algorithms aimed at optimization problems inspired by (a very simple interpretation of) the evolution theory. Most of those algorithms a heuristic or stochastic trial-and-error techniques.
 
 The main idea is to create a population of individuals and loop through a succession of survival selection, mating, mutation and generation of a new population, derived from the former one, so we can iteratively aproximate the an ideal or sufficiently acceptable solution to the problem.
 
 ## Concepts
 
-**Gene**: The value of a single variable of the problem space solution.
+**Gene**: The value of a single variable of the problem-space solution.
 
-**Genotype**: The collection of genes of an individual. Sometimes called **chromosome** in literature.
+**Genotype**: The collection of genes of an individual. Sometimes called **chromosome** or **DNA** in GA literature.
 
 **Alphabet**: The solution's variables types. Think of it as the possible values of a gene.
 
@@ -55,11 +55,13 @@ def calculate_fitness(target):
 
 ### How to improve individual selection for mating?
 
-If the mating pool get too big by inserting the same individuals multiple times to reflect their fitness/chance of survival, we can use [rejection sampling](https://en.wikipedia.org/wiki/Rejection_sampling). That method draws a individual from the regular population and tests a probability for keeping it tied to its fitness. If it's rejected, a new individual is drawn from the population. This avoid the creation of a proper mating poll, saving lots of memory, specially in bigger problem spaces, but takes much more cpu time/cycles.
+If the mating pool gets too big by inserting the same individuals multiple times to reflect their fitness/chance of survival, we can use [rejection sampling](https://en.wikipedia.org/wiki/Rejection_sampling). That method draws a individual from the regular population and tests a probability for keeping it tied to its fitness. If it's rejected, a new individual is drawn from the population. This avoid the creation of a proper mating poll, saving lots of memory, specially in bigger problem spaces, but takes much more cpu time/cycles.
 
 ## Libraries and frameworks
 * Python
   * [DEAP](https://github.com/DEAP/deap) - distributed evolutionary framework. Has a very robust genetic algorithm implementation, capable of working with almost any alphabet.
+* Java
+  * [Jenetics](http://jenetics.io/) - advanced Genetic Algorithm, Evolutionary Algorithm and Genetic Programming library, respectively, written in modern day Java.
 
 ## Content of this repo
 
